@@ -1,0 +1,23 @@
+﻿<div class="tooltip-wrapper">
+    <i class="fa fa-solid fa-circle-info tooltip-icon"></i>
+    <span class="tooltip-text @ToolTipTextClass">
+        @TooltipText
+    </span>
+</div>
+
+@code {
+    [Parameter]
+    public string TooltipText { get; set; }
+
+    [Parameter]
+    public string ToolTipLocation { get; set; }
+
+    public string ToolTipTextClass;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ToolTipTextClass = "tooltip-text-" + ToolTipLocation;
+    }
+
+}
+
